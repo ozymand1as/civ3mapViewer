@@ -1,0 +1,12 @@
+{
+  "name": "civ3-map-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-only Civilization III / OpenCiv3 map viewer",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Civ3 / OpenCiv3 Map Viewer</title>
+<meta name="description" content="A browser-only viewer for Civilization III saves and scenarios, and OpenCiv3 saves. Nothing is uploaded." />
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./css/app.css" />
+</head>
+<body>
+<header class="topbar">
+	<div class="brand">
+		<span class="brand-mark">⛰</span>
+		<div>
+			<strong>Civ3 Map Viewer</strong>
+			<span class="muted small">.sav · .biq · .bic · OpenCiv3 .json</span>
+		</div>
+	</div>
+	<div class="toolbar">
+		<button id="pick-file" type="button" class="primary">Open file…</button>
+		<button id="fit-view" type="button" title="Fit map (F)">Fit</button>
+		<button id="zoom-in" type="button" title="Zoom in (+)">+</button>
+		<button id="zoom-out" type="button" title="Zoom out (−)">−</button>
+		<button id="export-png" type="button">Export PNG</button>
+		<button id="export-json" type="button" title="Download the parsed model">Model JSON</button>
+		<div class="search">
+			<input id="search-input" type="search" placeholder="Find city or unit…" aria-label="Search cities and units" />
+			<button id="search-button" type="button">Go</button>
+		</div>
+	</div>
+</header>
+
+<main class="layout">
+	<aside class="sidebar" aria-label="Panels">
+		<section class="panel">
+			<h3>File</h3>
+			<div id="load-report" class="load-report"></div>
+			<p id="privacy-note" class="muted small"></p>
+		</section>
+		<section class="panel">
+			<h3>View</h3>
+			<div id="players-panel"></div>
+		</section>
+		<section class="panel">
+			<h3>Layers</h3>
+			<div id="layers-panel"></div>
+		</section>
+		<section class="panel">
+			<h3>Pinned tile</h3>
+			<div id="pinned-panel" class="load-report"></div>
+		</section>
+	</aside>
+
+	<div class="map-area">
+		<canvas id="map" tabindex="0" aria-label="Map canvas"></canvas>
+		<div id="drop-hint" class="drop-hint">
+			<strong>Drop a Civ3 .sav, .biq, .bic or an OpenCiv3 .json save</strong>
+			<span>or click to choose a file. Files never leave your browser.</span>
+		</div>
+		<div class="minimap-wrap">
+			<canvas id="minimap" width="220" height="140" aria-label="Minimap"></canvas>
+		</div>
+		<div id="tooltip" class="tooltip" role="tooltip"></div>
+	</div>
+</main>
+
+<footer class="footer">
+	<span class="muted small">Read-only viewer. No files are uploaded anywhere. Not affiliated with Firaxis or Take-Two.</span>
+</footer>
+
+<input id="file-input" type="file" accept=".sav,.biq,.bic,.json,.SAV,.BIQ,.BIC" hidden />
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

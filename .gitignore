@@ -1,0 +1,22 @@
+# Local-only test data: never commit real Civ3 files or extracted art.
+*.sav
+*.SAV
+*.biq
+*.BIQ
+*.bic
+*.BIC
+*.pcx
+*.PCX
+*.flc
+*.FLC
+
+# Local test fixtures that are real game data (synthetic fixtures live in test/).
+test/fixtures/local/
+test/local/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+node_modules/
